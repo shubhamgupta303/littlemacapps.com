@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Little Mac Apps">
+  <!-- A little compact Mac: body, screen, the three File Stacker bars as the "display", floppy slot. -->
+  <rect x="10" y="4" width="44" height="54" rx="9" fill="#26324f"/>
+  <rect x="16" y="10" width="32" height="26" rx="4" fill="#f7f6f2"/>
+  <rect x="20" y="15" width="20" height="4" rx="2" fill="#e9a93a"/>
+  <rect x="20" y="21" width="15" height="4" rx="2" fill="#3fae95"/>
+  <rect x="20" y="27" width="9" height="4" rx="2" fill="#e0705c"/>
+  <rect x="34" y="45" width="12" height="3" rx="1.5" fill="#f7f6f2" opacity=".55"/>
+  <rect x="16" y="58" width="32" height="4" rx="2" fill="#26324f" opacity=".35"/>
+</svg>

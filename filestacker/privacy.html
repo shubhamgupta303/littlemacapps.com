@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>File Stacker privacy policy — Little Mac Apps</title>
+<meta name="description" content="File Stacker runs entirely on your Mac. No accounts, no analytics, no tracking and no network access.">
+<link rel="canonical" href="https://littlemacapps.com/filestacker/privacy.html">
+<link rel="icon" href="../assets/filestacker-256.png" type="image/png">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="../"><img src="../assets/logo.svg" alt="">Little Mac Apps</a>
+  <nav class="nav" aria-label="Main">
+    <a href="./">File Stacker</a>
+    <a href="./#support">Support</a>
+    <a href="privacy.html" aria-current="page">Privacy</a>
+  </nav>
+</div></header>
+
+<main id="main" class="wrap page">
+  <h1>File Stacker privacy policy</h1>
+  <p class="meta">Last updated October 4, 2026 · applies to the File Stacker Mac app and this website</p>
+  <p class="lead">File Stacker is a macOS storage analyzer made by Little Mac Apps, an independent developer. It runs entirely on your Mac. Nothing about you or your files is collected.</p>
+
+  <h2>What File Stacker does not do</h2>
+  <ul>
+    <li><strong>No network access.</strong> The app has no network entitlement; it cannot send or receive data over the internet.</li>
+    <li><strong>No accounts, analytics, crash reporting, advertising or tracking.</strong></li>
+    <li><strong>No third-party code</strong> is bundled with the app.</li>
+  </ul>
+
+  <h2>Buying File Stacker Pro</h2>
+  <p>File Stacker is free to download; Pro is a one-time in-app purchase through the Mac App Store. Apple processes the payment and keeps the purchase record with your Apple ID. The app only asks macOS whether Pro has been bought. It never sees your name, email address or payment details, and the developer receives no personal information from the purchase.</p>
+
+  <h2>What it reads</h2>
+  <p>File Stacker reads only the folders you grant through the standard macOS folder picker (and, when you use Uninstall Apps, the app you pick). It reads names, sizes, dates and kinds of items and, for the Duplicates tool, file contents in order to compare them. macOS enforces this with the App Sandbox: folders you haven't granted can't be read.</p>
+  <p>While System Doctor is open, it reads your Mac's CPU, memory, network and battery statistics and the names and resource use of your own running processes. These readings stay in memory, are shown on screen, and are discarded when you leave the screen.</p>
+
+  <h2>What it stores on your Mac</h2>
+  <div class="table">
+    <table>
+      <thead><tr><th scope="col">Data</th><th scope="col">Why</th><th scope="col">How to remove</th></tr></thead>
+      <tbody>
+        <tr><td>Access bookmarks for folders you granted</td><td>So you don't have to grant them again</td><td>Sidebar → right-click → Remove Access</td></tr>
+        <tr><td>Preferences (view, grouping, menu bar, alerts, exclusions, schedules)</td><td>To remember your setup</td><td>Change them in Settings</td></tr>
+        <tr><td>Scan summaries (folder sizes a few levels deep, large files, last 40 scans per folder)</td><td>History &amp; Trends</td><td>Remove the app's container</td></tr>
+        <tr><td>Removal history (original and Trash locations, dates, sizes)</td><td>Recent Removals and Put Back</td><td>Clear the list in Recent Removals</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>All of it lives inside the app's own sandbox container, <code>~/Library/Containers/io.github.shubhamgupta303.filestacker</code>. Deleting that folder after quitting the app removes everything. It doesn't affect the files you analyzed.</p>
+
+  <h2>What it changes, only when you ask</h2>
+  <ul>
+    <li><strong>Move to Trash.</strong> Items you confirm go to the macOS Trash. File Stacker never deletes anything permanently and never empties the Trash.</li>
+    <li><strong>Remove Download.</strong> Asks macOS to remove the local copy of an iCloud Drive file you chose; the file stays in iCloud.</li>
+    <li><strong>Exports.</strong> Reports are saved only where you choose.</li>
+    <li><strong>Notifications.</strong> If you turn on alerts or scheduled scans, macOS shows local notifications with folder names and sizes. They are created on your Mac and not sent anywhere.</li>
+  </ul>
+  <p>Some actions involve other services under their own policies: Apple for iCloud and the App Store, your browser when you open a link, your email provider when you email support, and Google Forms when you use the contact form.</p>
+
+  <h2 id="website">This website</h2>
+  <p>littlemacapps.com uses no cookies, analytics or trackers. It is hosted on GitHub Pages, which may log technical information such as IP addresses under GitHub's privacy statement.</p>
+  <p>If you use the <a href="../contact/">contact form</a>, the name, email address, topic and message you enter are sent through Google Forms and stored in the developer's Google account under Google's privacy policy. They are used only to reply to you. Nothing is sent unless you press Send.</p>
+
+  <h2>Contact and changes</h2>
+  <p>Questions about privacy: <a href="mailto:help@littlemacapps.com?subject=File%20Stacker%20Privacy">help@littlemacapps.com</a>. If this policy changes, the new version is published here with a new date.</p>
+</main>
+
+<footer class="site-footer"><div class="wrap">
+  <span>© 2026 Little Mac Apps</span>
+  <nav aria-label="Footer">
+    <a href="../">Little Mac Apps</a>
+    <a href="./">File Stacker</a>
+    <a href="./#support">Support</a>
+  </nav>
+</div></footer>
+</body>
+</html>
