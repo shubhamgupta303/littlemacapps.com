@@ -47,9 +47,13 @@
       "headline": "How to find duplicate files on a Mac",
       "description": "Find duplicate files on a Mac: identical vs. similar files, Photos' Duplicates collection, File Stacker's Duplicates tool, and how to choose which copy to keep.",
       "url": "https://littlemacapps.com/guides/find-duplicate-files-mac/",
-      "dateModified": "2026-10-05",
+      "datePublished": "2026-10-05T00:00:00+05:30",
+      "dateModified": "2026-10-05T00:00:00+05:30",
       "author": {
-        "@id": "https://littlemacapps.com/#organization"
+        "@type": "Organization",
+        "@id": "https://littlemacapps.com/#organization",
+        "name": "Little Mac Apps",
+        "url": "https://littlemacapps.com/"
       },
       "publisher": {
         "@type": "Organization",
@@ -97,7 +101,7 @@
       </tbody>
     </table>
   </div>
-  <p>Deleting one of two identical files loses nothing, because the other copy has the same contents. Similar files need a person to compare them. File Stacker's Duplicates tool finds identical files only. It doesn't decide whether two different photos look alike.</p>
+  <p>Identical files contain the same bytes, but their locations and metadata can matter. Before removing a copy, check that no app or project depends on it and that you’ve kept the metadata you need. Similar files need a person to compare them. File Stacker's Duplicates tool finds identical files only. It doesn't decide whether two different photos look alike.</p>
 
   <h2 id="built-in">What macOS can do on its own</h2>
   <h3 id="photos">Photos library: the Duplicates collection</h3>
@@ -128,8 +132,8 @@
     <li><b>Keep the copy in the place you'd look for it.</b> A file in an organized project or Documents folder is usually the one to keep. A copy in Downloads or on the Desktop is usually the spare.</li>
     <li><b>Keep the copy an app depends on.</b> Files inside a project folder, a code repository or an app's own folder may be referenced by path. Deleting that copy can break the project even though another copy exists.</li>
     <li><b>Think about synced folders.</b> Deleting a copy in iCloud Drive or another synced folder removes it from your other devices too.</li>
-    <li><b>Newest isn't always best.</b> Identical files have the same contents, so “newest” only means the most recently modified copy on disk. Choose by location when location matters.</li>
-    <li><b>Check what isn't in the contents.</b> Finder tags, comments and the file name aren't part of the contents, so two identical files can still carry different tags.</li>
+    <li><b>Newest isn't always best.</b> Identical files have the same bytes, so “newest” only means the most recently modified copy on disk. Choose by location and dependencies, not by date alone.</li>
+    <li><b>Keep the metadata you need.</b> Finder tags, comments, the file name and dates aren't part of the contents, so two identical files can carry different ones. Copy anything you want onto the copy you keep before removing the others.</li>
   </ul>
 
   <h2 id="space">Why removing a duplicate may free less space than shown</h2>
@@ -143,13 +147,14 @@
   <p>Files stored only in iCloud are skipped rather than downloaded to compare.</p>
 
   <h2 id="undo">Undoing a mistake</h2>
-  <p>Everything File Stacker removes goes to the Trash. Open <span class="ui">Recent Removals</span> and click <span class="ui">Put Back</span> to return an item to its original folder, as long as it's still in the Trash. You can also mark a folder <span class="ui">Protect from removal</span> so no tool ever suggests files inside it.</p>
+  <p>Everything File Stacker removes goes to the Trash. Open <span class="ui">Recent Removals</span> and click <span class="ui">Put Back</span> to return an item to its original folder, as long as it's still in the Trash. In Finder, you can also select an item in the Trash and choose <span class="ui">File → Put Back</span>. You can also mark a folder <span class="ui">Protect from removal</span> so no tool ever suggests files inside it.</p>
 
   <h2 id="sources">Sources</h2>
   <ul class="sources">
     <li>Apple Support: <a href="https://support.apple.com/guide/photos/pht5a3157c1d/mac">Remove duplicate photos and videos on Mac</a></li>
     <li>Apple Developer: <a href="https://developer.apple.com/documentation/foundation/about-apple-file-system">About Apple File System</a> (clones and sparse files)</li>
     <li>Apple Support: <a href="https://support.apple.com/en-us/102624">Free up storage space on Mac</a> (emptying the Trash)</li>
+    <li>Apple Support: <a href="https://support.apple.com/guide/mac-help/delete-files-and-folders-on-mac-mchlp1093/mac">Delete files and folders on Mac</a> (Put Back)</li>
   </ul>
 
   <h2 id="related">Related guides</h2>
