@@ -209,3 +209,6 @@ details p { color: var(--muted); margin: 10px 0 0; }
 .form-done { margin-top: 28px; max-width: 640px; }
 .form-done h3 { font-size: 20px; margin-bottom: 8px; }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+/* Make the hidden attribute win over display rules */
+[hidden] { display: none !important; }
