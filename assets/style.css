@@ -220,3 +220,8 @@ details p { color: var(--muted); margin: 10px 0 0; }
 .about h1 { margin-top: 0; }
 .about .muted { margin-top: 0; }
 @media (max-width: 680px) { .about { grid-template-columns: 1fr; gap: 24px; } .about-photo { width: 160px; height: 160px; } }
+
+/* Keep menu items on one line on small screens */
+.nav a { white-space: nowrap; }
+.brand { flex-shrink: 0; }
+@media (max-width: 400px) { .nav a:not(.btn) { display: none; } }
