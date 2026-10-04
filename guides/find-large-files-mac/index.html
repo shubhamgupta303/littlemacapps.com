@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Find Large Files on a Mac — Little Mac Apps</title>
+<meta name="description" content="Find the files and folders using the most space on your Mac with Storage settings, a Finder size search, or File Stacker's treemap. Plus what to check before you delete.">
+<link rel="canonical" href="https://littlemacapps.com/guides/find-large-files-mac/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://littlemacapps.com/guides/find-large-files-mac/">
+<meta property="og:title" content="How to find large files on a Mac">
+<meta property="og:description" content="Find the files and folders using the most space on your Mac with Storage settings, a Finder size search, or File Stacker's treemap. Plus what to check before you delete.">
+<meta property="og:site_name" content="Little Mac Apps">
+<meta property="og:image" content="https://littlemacapps.com/assets/filestacker-512.png">
+<link rel="icon" href="../../assets/logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../assets/filestacker-256.png">
+<link rel="stylesheet" href="../../assets/style.css?v=5">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://littlemacapps.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://littlemacapps.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Find large files",
+          "item": "https://littlemacapps.com/guides/find-large-files-mac/"
+        }
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "headline": "How to find large files on a Mac",
+      "description": "Find the files and folders using the most space on your Mac with Storage settings, a Finder size search, or File Stacker's treemap. Plus what to check before you delete.",
+      "url": "https://littlemacapps.com/guides/find-large-files-mac/",
+      "dateModified": "2026-10-05",
+      "author": {
+        "@id": "https://littlemacapps.com/#organization"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://littlemacapps.com/#organization",
+        "name": "Little Mac Apps",
+        "url": "https://littlemacapps.com/"
+      },
+      "about": {
+        "@id": "https://littlemacapps.com/filestacker/#app"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="../../"><img src="../../assets/logo.svg" alt="">Little Mac Apps</a>
+  <nav class="nav" aria-label="Main">
+    <a class="hide-sm" href="../../#apps">Apps</a>
+    <a href="../../guides/">Guides</a>
+    <a class="hide-sm" href="../../about/">About</a>
+    <a class="btn btn-dark btn-sm" href="../../filestacker/">File Stacker</a>
+  </nav>
+</div></header>
+
+<main id="main" class="wrap page article">
+  <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="../../">Home</a></li><li><a href="../../guides/">Guides</a></li><li aria-current="page">Find large files</li></ol></nav>
+  <h1>How to find large files on a Mac</h1>
+  <p class="meta">By Little Mac Apps · Updated <time datetime="2026-10-05">October 5, 2026</time></p>
+
+  <div class="answer">
+    <p><b>Short answer:</b> on macOS Ventura or later, open <span class="ui">System Settings → General → Storage</span>, click the Info button <span aria-hidden="true">ⓘ</span> next to <span class="ui">Documents</span>, and look at <span class="ui">Large Files</span>. macOS lists big files and lets you sort them by size. To see whole folders as well as single files, use a disk space analyzer such as File Stacker. It draws every folder to scale, so the biggest things are the biggest blocks.</p>
+  </div>
+
+  <p>A single huge file is easy to spot. Disk space more often goes to a folder of thousands of medium-sized files: a photo export, a cache, an old project. Below are three built-in ways to find large files, then the File Stacker workflow, then what to check before you delete anything.</p>
+
+  <h2 id="built-in">Find large files with what's built into macOS</h2>
+
+  <h3 id="storage-settings">1. Storage settings</h3>
+  <ol>
+    <li>Choose <span class="ui">Apple menu → System Settings</span>, click <span class="ui">General</span>, then <span class="ui">Storage</span>.</li>
+    <li>Wait for the bar at the top to finish calculating. It shows how much space each category uses.</li>
+    <li>Click the Info button next to <span class="ui">Documents</span>. You can view large files or downloads, sort by name, kind, last accessed or size, and use <span class="ui">File Browser</span> to see how much space folders use.</li>
+  </ol>
+  <p>On macOS Monterey (12), the same tools are under <span class="ui">Apple menu → About This Mac → Storage → Manage</span>.</p>
+
+  <h3 id="finder-search">2. A Finder search by file size</h3>
+  <ol>
+    <li>In Finder, press <kbd>⌘F</kbd> and choose <span class="ui">This Mac</span> as the search location.</li>
+    <li>Click the first pop-up menu (usually <span class="ui">Kind</span>), choose <span class="ui">Other…</span>, then select <span class="ui">File Size</span>.</li>
+    <li>Set the rule to <span class="ui">is greater than</span> a size such as 1 GB.</li>
+    <li>To keep the search, click <span class="ui">Save</span>. macOS stores it as a Smart Folder that updates by itself.</li>
+  </ol>
+  <p>Finder search uses Spotlight's index, so it only finds files in places Spotlight has indexed, and it lists files, not folders.</p>
+
+  <h3 id="get-info">3. Get Info for a single folder</h3>
+  <p>Select a folder and press <kbd>⌘I</kbd> to see its total size. This works for checking one folder, but it's slow for finding which folder is the problem.</p>
+
+  <h2 id="file-stacker">Find large files with File Stacker</h2>
+  <p>File Stacker is a disk space analyzer for Mac. It scans the folders you choose and shows them as a treemap: every rectangle is a file or folder, sized by how much disk space it uses. The tag next to each step says whether it's in the free version or needs the one-time <a href="../../filestacker/#pricing">Pro unlock</a>.</p>
+
+  <h3 id="scan">Scan and read the map <span class="tag free">FREE</span></h3>
+  <ol>
+    <li>Open File Stacker and click <span class="ui">Scan Home Folder…</span>. In the folder picker, keep your Home folder selected and click <span class="ui">Grant Access</span>. The app is sandboxed, so it can read only the folders you grant.</li>
+    <li>Look for the largest rectangles first. Colors show the kind of file; click a kind in the legend to highlight it.</li>
+    <li>Click a folder to drill in. Press <kbd>⌘↑</kbd> to go back up a level.</li>
+    <li>Click any item to see its size on disk, dates and largest contents in the inspector. Press <kbd>Space</kbd> for Quick Look (macOS 14 or later).</li>
+  </ol>
+
+  <h3 id="filter">Filter by size and age <span class="tag free">FREE</span></h3>
+  <ol>
+    <li>Click <span class="ui">Filter</span> and set <span class="ui">Larger than</span> to hide everything below a size.</li>
+    <li>Add <span class="ui">Not opened in</span> to narrow the list to files you haven't touched for months.</li>
+    <li>Type an extension such as <code>.dmg</code>, <code>.zip</code> or <code>.mov</code> in the search field to find every file of that kind.</li>
+  </ol>
+  <p>In the free version, right-click an item and choose <span class="ui">Show in Finder</span> to delete it there.</p>
+
+  <h3 id="large-old-tool">Use Large &amp; Old Files <span class="tag">PRO</span></h3>
+  <ol>
+    <li>After a scan, open <span class="ui">Large &amp; Old Files</span> in the sidebar.</li>
+    <li>Set <span class="ui">Larger than</span> and <span class="ui">Not opened in</span>. The list updates as you change them, biggest first.</li>
+    <li>Preview with Quick Look. To remove something, right-click and choose <span class="ui">Move to Trash</span>, or add several items to the <span class="ui">Collector</span> (<kbd>⇧⌘C</kbd>) and move them in one step.</li>
+    <li>If you change your mind, open <span class="ui">Recent Removals</span> and click <span class="ui">Put Back</span> while the item is still in the Trash.</li>
+  </ol>
+
+  <h2 id="what-to-look-for">Where large files usually hide</h2>
+  <ul>
+    <li><b>Downloads:</b> disk images (<code>.dmg</code>), installers (<code>.pkg</code>) and archives you've already opened or installed.</li>
+    <li><b>Video:</b> screen recordings, exports and copies from a camera or phone.</li>
+    <li><b>Device backups:</b> old iPhone or iPad backups. Storage settings lists them under <span class="ui">iOS Files</span>.</li>
+    <li><b>Virtual machines and developer tools:</b> VM disk images, Xcode build data and simulators. See <a href="../clean-xcode-storage/">how to clean up Xcode storage</a>.</li>
+    <li><b>Duplicates:</b> the same file saved in several folders. See <a href="../find-duplicate-files-mac/">how to find duplicate files</a>.</li>
+  </ul>
+
+  <h2 id="before-you-delete">Before you delete a large file</h2>
+  <ul>
+    <li><b>Don't remove files from inside app libraries.</b> Your Photos library, Music library and an app's own folders are managed by those apps. Clean them up from inside the app.</li>
+    <li><b>Empty the Trash to get the space back.</b> When you move a file to the Trash, its space isn't available until you empty the Trash. File Stacker never empties the Trash for you.</li>
+    <li><b>Sizes can differ between apps.</b> File Stacker shows the space a file actually occupies on disk. Finder's size can be different. On APFS a copied file can be a clone that shares storage with the original, so deleting one copy may free little space.</li>
+    <li><b>Keep files you might need in iCloud instead.</b> For a file in iCloud Drive, File Stacker's <span class="ui">Remove Download (Keep in iCloud)</span> deletes the local copy and keeps the file in iCloud.</li>
+  </ul>
+
+  <h2 id="limits">What File Stacker can't see</h2>
+  <p>File Stacker scans only folders you grant. It can't measure everything macOS counts as “System Data”, because macOS keeps those locations off-limits to sandboxed apps. Some protected folders, such as Mail's data, appear with a lock and are marked incomplete rather than shown as empty.</p>
+
+  <h2 id="sources">Sources</h2>
+  <ul class="sources">
+    <li>Apple Support: <a href="https://support.apple.com/guide/mac-help/change-storage-settings-mchl3d437fbc/mac">Change Storage settings on Mac</a></li>
+    <li>Apple Support: <a href="https://support.apple.com/en-us/102624">Free up storage space on Mac</a></li>
+    <li>Apple Support: <a href="https://support.apple.com/guide/mac-help/create-or-change-a-smart-folder-on-mac-mchlp2804/mac">Create or change a Smart Folder on Mac</a></li>
+    <li>Apple Support: <a href="https://support.apple.com/guide/mac-help/get-file-folder-and-disk-information-on-mac-mchlp1774/mac">Get file, folder and disk information on Mac</a></li>
+    <li>Apple Developer: <a href="https://developer.apple.com/documentation/foundation/about-apple-file-system">About Apple File System</a> (clones and sparse files)</li>
+  </ul>
+
+  <h2 id="related">Related guides</h2>
+  <div class="related">
+    <a href="../find-duplicate-files-mac/">Find duplicate files<span>Identical vs. similar files, and which copy to keep.</span></a>
+    <a href="../clean-xcode-storage/">Clean up Xcode storage<span>What each Xcode folder is for and what removing it does.</span></a>
+    <a href="../../filestacker/#guide">File Stacker quick guide<span>Short steps for every feature.</span></a>
+  </div>
+
+</main>
+
+<footer class="site-footer"><div class="wrap">
+  <span>© 2026 Little Mac Apps</span>
+  <nav aria-label="Footer">
+    <a href="../../">Little Mac Apps</a>
+    <a href="../../filestacker/">File Stacker</a>
+    <a href="../../guides/">Guides</a>
+    <a href="../../about/">About</a>
+    <a href="../../contact/">Contact</a>
+    <a href="../../filestacker/privacy.html">Privacy</a>
+  </nav>
+</div></footer>
+</body>
+</html>

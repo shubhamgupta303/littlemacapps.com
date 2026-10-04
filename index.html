@@ -3,17 +3,40 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Little Mac Apps — small, careful apps for your Mac</title>
-<meta name="description" content="Little Mac Apps makes focused macOS utilities that do one job well, respect your privacy and never need an account. Meet File Stacker, the storage analyzer for Mac.">
+<title>Little Mac Apps — Private, Native macOS Utilities</title>
+<meta name="description" content="Little Mac Apps makes private, native macOS utilities that do one job well and never need an account. Meet File Stacker, a disk space analyzer for Mac.">
 <link rel="canonical" href="https://littlemacapps.com/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://littlemacapps.com/">
-<meta property="og:title" content="Little Mac Apps">
-<meta property="og:description" content="Small, careful apps for your Mac. No accounts, no tracking, no subscriptions.">
+<meta property="og:title" content="Little Mac Apps — Private, Native macOS Utilities">
+<meta property="og:description" content="Private, native macOS utilities. No accounts, no tracking, no subscriptions.">
+<meta property="og:site_name" content="Little Mac Apps">
 <meta property="og:image" content="https://littlemacapps.com/assets/filestacker-512.png">
 <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/filestacker-256.png">
-<link rel="stylesheet" href="assets/style.css?v=4">
+<link rel="stylesheet" href="assets/style.css?v=5">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://littlemacapps.com/#organization",
+      "name": "Little Mac Apps",
+      "url": "https://littlemacapps.com/",
+      "logo": "https://littlemacapps.com/assets/logo.svg",
+      "email": "help@littlemacapps.com"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://littlemacapps.com/#website",
+      "name": "Little Mac Apps",
+      "url": "https://littlemacapps.com/",
+      "publisher": { "@id": "https://littlemacapps.com/#organization" }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -53,10 +76,10 @@
         <p>Each app is built natively for macOS, runs on Apple silicon and Intel Macs, and is available on the Mac App Store.</p>
       </div>
       <div class="card app-card">
-        <img src="assets/filestacker-256.png" alt="File Stacker app icon" width="112" height="112">
+        <img src="assets/filestacker-256.png" alt="File Stacker app icon" width="112" height="112" loading="lazy" decoding="async">
         <div>
           <h3 style="font-size:26px">File Stacker</h3>
-          <p style="font-size:17px">See where your storage goes and get it back safely. An interactive map of your disk, careful cleanup tools, and System Doctor, a live health check for your Mac.</p>
+          <p style="font-size:17px">A disk space analyzer for Mac: see where your storage goes and get it back safely. An interactive map of your disk, careful cleanup tools, and System Doctor, a live health check for your Mac.</p>
           <ul class="facts">
             <li>Free download</li><li>Pro unlock, pay once</li><li>macOS 12 or later</li><li>Apple silicon &amp; Intel</li>
           </ul>
@@ -64,6 +87,7 @@
         <div class="actions">
           <a class="btn btn-primary" href="https://apps.apple.com/app/id6816327919">View on the Mac App Store</a>
           <a class="btn btn-ghost" href="filestacker/">Features &amp; guide</a>
+          <a class="btn btn-ghost" href="guides/">Storage guides</a>
         </div>
       </div>
       <div class="card soon" style="margin-top:16px">
@@ -136,6 +160,7 @@
   <nav aria-label="Footer">
     <a href="filestacker/">File Stacker</a>
     <a href="filestacker/privacy.html">Privacy</a>
+    <a href="guides/">Guides</a>
     <a href="about/">About</a>
     <a href="contact/">Contact</a>
   </nav>

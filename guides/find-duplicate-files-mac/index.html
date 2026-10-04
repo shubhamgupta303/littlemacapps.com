@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Find Duplicate Files on a Mac — Little Mac Apps</title>
+<meta name="description" content="Find duplicate files on a Mac: identical vs. similar files, Photos' Duplicates collection, File Stacker's Duplicates tool, and how to choose which copy to keep.">
+<link rel="canonical" href="https://littlemacapps.com/guides/find-duplicate-files-mac/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://littlemacapps.com/guides/find-duplicate-files-mac/">
+<meta property="og:title" content="How to find duplicate files on a Mac">
+<meta property="og:description" content="Find duplicate files on a Mac: identical vs. similar files, Photos' Duplicates collection, File Stacker's Duplicates tool, and how to choose which copy to keep.">
+<meta property="og:site_name" content="Little Mac Apps">
+<meta property="og:image" content="https://littlemacapps.com/assets/filestacker-512.png">
+<link rel="icon" href="../../assets/logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../assets/filestacker-256.png">
+<link rel="stylesheet" href="../../assets/style.css?v=5">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://littlemacapps.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://littlemacapps.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Find duplicate files",
+          "item": "https://littlemacapps.com/guides/find-duplicate-files-mac/"
+        }
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "headline": "How to find duplicate files on a Mac",
+      "description": "Find duplicate files on a Mac: identical vs. similar files, Photos' Duplicates collection, File Stacker's Duplicates tool, and how to choose which copy to keep.",
+      "url": "https://littlemacapps.com/guides/find-duplicate-files-mac/",
+      "dateModified": "2026-10-05",
+      "author": {
+        "@id": "https://littlemacapps.com/#organization"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://littlemacapps.com/#organization",
+        "name": "Little Mac Apps",
+        "url": "https://littlemacapps.com/"
+      },
+      "about": {
+        "@id": "https://littlemacapps.com/filestacker/#app"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="../../"><img src="../../assets/logo.svg" alt="">Little Mac Apps</a>
+  <nav class="nav" aria-label="Main">
+    <a class="hide-sm" href="../../#apps">Apps</a>
+    <a href="../../guides/">Guides</a>
+    <a class="hide-sm" href="../../about/">About</a>
+    <a class="btn btn-dark btn-sm" href="../../filestacker/">File Stacker</a>
+  </nav>
+</div></header>
+
+<main id="main" class="wrap page article">
+  <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="../../">Home</a></li><li><a href="../../guides/">Guides</a></li><li aria-current="page">Find duplicate files</li></ol></nav>
+  <h1>How to find duplicate files on a Mac</h1>
+  <p class="meta">By Little Mac Apps · Updated <time datetime="2026-10-05">October 5, 2026</time></p>
+
+  <div class="answer">
+    <p><b>Short answer:</b> macOS has no general duplicate-file finder. For photos and videos, open Photos and click <span class="ui">Duplicates</span> under <span class="ui">Utilities</span> in the sidebar (macOS Ventura or later). For everything else, use a tool that compares file contents. File Stacker's Duplicates tool (Pro) groups identical files, lets you choose which copy to keep, and moves the others to the Trash.</p>
+  </div>
+
+  <h2 id="identical-vs-similar">Identical files vs. similar files</h2>
+  <p>“Duplicate” can mean two different things, and they need different tools.</p>
+  <div class="table" tabindex="0" role="region" aria-label="Identical and similar files compared">
+    <table>
+      <thead><tr><th scope="col">Kind</th><th scope="col">What it means</th><th scope="col">Example</th></tr></thead>
+      <tbody>
+        <tr><td><b>Identical</b></td><td>The files contain exactly the same bytes, even if their names, dates or folders differ.</td><td>An installer downloaded twice; <code>report.pdf</code> and <code>report (1).pdf</code>.</td></tr>
+        <tr><td><b>Similar</b></td><td>The files look alike but their contents differ.</td><td>A photo and its edited or resized version; two burst shots; a song in two formats.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Deleting one of two identical files loses nothing, because the other copy has the same contents. Similar files need a person to compare them. File Stacker's Duplicates tool finds identical files only. It doesn't decide whether two different photos look alike.</p>
+
+  <h2 id="built-in">What macOS can do on its own</h2>
+  <h3 id="photos">Photos library: the Duplicates collection</h3>
+  <ol>
+    <li>Open Photos and click <span class="ui">Duplicates</span> under <span class="ui">Utilities</span> in the sidebar. If you don't see it, Photos may not have found any yet.</li>
+    <li>Select the duplicates you want to combine and click <span class="ui">Merge</span>.</li>
+    <li>One item stays in your library. The others move to <span class="ui">Recently Deleted</span>, where you can recover them for 30 days.</li>
+  </ol>
+  <p>Never delete files from inside the Photos library package in Finder. Use Photos for anything in your library.</p>
+
+  <h3 id="finder">Other files: a manual check in Finder</h3>
+  <p>Finder can't compare contents, but it can show likely duplicates. Search for a name, then switch to list view and sort by <span class="ui">Size</span>. Files with the same name and exactly the same size are worth checking. Open both before deleting, because the same size doesn't prove the same contents.</p>
+
+  <h2 id="file-stacker">Find identical files with File Stacker <span class="tag">PRO</span></h2>
+  <p>Scanning and the treemap are free. The Duplicates tool needs the one-time <a href="../../filestacker/#pricing">Pro unlock</a>.</p>
+  <ol>
+    <li>Scan the folders you want to check. Your Home folder is a good start; add an external disk with <span class="ui">Grant Access to a Folder…</span>.</li>
+    <li>Open <span class="ui">Duplicates</span> in the sidebar.</li>
+    <li>Choose <span class="ui">Ignore files under</span> 1 MB, 10 MB or 100 MB. Larger limits are faster and show where the space is.</li>
+    <li>Click <span class="ui">Find Duplicates</span>. Each set lists copies with identical contents, with the size of one copy and how many there are.</li>
+    <li>Choose which copy to keep with the <span class="ui">Keep</span> menu (<span class="ui">Newest copy</span>, <span class="ui">Oldest copy</span> or a folder), or click <span class="ui">Keep this one</span> on a specific copy.</li>
+    <li>Click the set's button to keep that copy and move the others to the Trash. File Stacker checks every copy again right before anything moves.</li>
+  </ol>
+  <p>To check a file before choosing, select it to see its full path and dates, or press <kbd>Space</kbd> for Quick Look (macOS 14 or later).</p>
+
+  <h2 id="which-copy">How to choose which copy to keep</h2>
+  <ul>
+    <li><b>Keep the copy in the place you'd look for it.</b> A file in an organized project or Documents folder is usually the one to keep. A copy in Downloads or on the Desktop is usually the spare.</li>
+    <li><b>Keep the copy an app depends on.</b> Files inside a project folder, a code repository or an app's own folder may be referenced by path. Deleting that copy can break the project even though another copy exists.</li>
+    <li><b>Think about synced folders.</b> Deleting a copy in iCloud Drive or another synced folder removes it from your other devices too.</li>
+    <li><b>Newest isn't always best.</b> Identical files have the same contents, so “newest” only means the most recently modified copy on disk. Choose by location when location matters.</li>
+    <li><b>Check what isn't in the contents.</b> Finder tags, comments and the file name aren't part of the contents, so two identical files can still carry different tags.</li>
+  </ul>
+
+  <h2 id="space">Why removing a duplicate may free less space than shown</h2>
+  <p>File Stacker treats duplicate savings as an upper bound. You may get back less than the size shown because:</p>
+  <ul>
+    <li><b>APFS clones share storage.</b> When you copy a file on the same APFS volume, macOS can create a clone that shares the original's data blocks. Deleting a clone frees almost nothing. File Stacker marks these sets as <span class="ui">APFS clones</span>.</li>
+    <li><b>Hard links point to the same data.</b> Two paths can refer to one file on disk, so removing one path frees nothing.</li>
+    <li><b>Compression and sparse files</b> mean a file can take up less space on disk than its listed size.</li>
+    <li><b>The Trash still holds the file.</b> The space isn't available until you empty the Trash. File Stacker never empties it for you.</li>
+  </ul>
+  <p>Files stored only in iCloud are skipped rather than downloaded to compare.</p>
+
+  <h2 id="undo">Undoing a mistake</h2>
+  <p>Everything File Stacker removes goes to the Trash. Open <span class="ui">Recent Removals</span> and click <span class="ui">Put Back</span> to return an item to its original folder, as long as it's still in the Trash. You can also mark a folder <span class="ui">Protect from removal</span> so no tool ever suggests files inside it.</p>
+
+  <h2 id="sources">Sources</h2>
+  <ul class="sources">
+    <li>Apple Support: <a href="https://support.apple.com/guide/photos/pht5a3157c1d/mac">Remove duplicate photos and videos on Mac</a></li>
+    <li>Apple Developer: <a href="https://developer.apple.com/documentation/foundation/about-apple-file-system">About Apple File System</a> (clones and sparse files)</li>
+    <li>Apple Support: <a href="https://support.apple.com/en-us/102624">Free up storage space on Mac</a> (emptying the Trash)</li>
+  </ul>
+
+  <h2 id="related">Related guides</h2>
+  <div class="related">
+    <a href="../find-large-files-mac/">Find large files<span>Storage settings, Finder search and the treemap.</span></a>
+    <a href="../clean-xcode-storage/">Clean up Xcode storage<span>What each Xcode folder is for and what removing it does.</span></a>
+    <a href="../../filestacker/#duplicates">Duplicates quick steps<span>The short version in the File Stacker guide.</span></a>
+  </div>
+
+</main>
+
+<footer class="site-footer"><div class="wrap">
+  <span>© 2026 Little Mac Apps</span>
+  <nav aria-label="Footer">
+    <a href="../../">Little Mac Apps</a>
+    <a href="../../filestacker/">File Stacker</a>
+    <a href="../../guides/">Guides</a>
+    <a href="../../about/">About</a>
+    <a href="../../contact/">Contact</a>
+    <a href="../../filestacker/privacy.html">Privacy</a>
+  </nav>
+</div></footer>
+</body>
+</html>

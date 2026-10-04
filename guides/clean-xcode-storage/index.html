@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Clean Up Xcode Storage on a Mac — Little Mac Apps</title>
+<meta name="description" content="What DerivedData, simulators, runtimes, archives and other Xcode data are for, what removing each one does, and how to clear them with Xcode or File Stacker.">
+<link rel="canonical" href="https://littlemacapps.com/guides/clean-xcode-storage/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://littlemacapps.com/guides/clean-xcode-storage/">
+<meta property="og:title" content="How to clean up Xcode storage">
+<meta property="og:description" content="What DerivedData, simulators, runtimes, archives and other Xcode data are for, what removing each one does, and how to clear them with Xcode or File Stacker.">
+<meta property="og:site_name" content="Little Mac Apps">
+<meta property="og:image" content="https://littlemacapps.com/assets/filestacker-512.png">
+<link rel="icon" href="../../assets/logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../assets/filestacker-256.png">
+<link rel="stylesheet" href="../../assets/style.css?v=5">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://littlemacapps.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://littlemacapps.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Clean up Xcode storage",
+          "item": "https://littlemacapps.com/guides/clean-xcode-storage/"
+        }
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "headline": "How to clean up Xcode storage",
+      "description": "What DerivedData, simulators, runtimes, archives and other Xcode data are for, what removing each one does, and how to clear them with Xcode or File Stacker.",
+      "url": "https://littlemacapps.com/guides/clean-xcode-storage/",
+      "dateModified": "2026-10-05",
+      "author": {
+        "@id": "https://littlemacapps.com/#organization"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://littlemacapps.com/#organization",
+        "name": "Little Mac Apps",
+        "url": "https://littlemacapps.com/"
+      },
+      "about": {
+        "@id": "https://littlemacapps.com/filestacker/#app"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="../../"><img src="../../assets/logo.svg" alt="">Little Mac Apps</a>
+  <nav class="nav" aria-label="Main">
+    <a class="hide-sm" href="../../#apps">Apps</a>
+    <a href="../../guides/">Guides</a>
+    <a class="hide-sm" href="../../about/">About</a>
+    <a class="btn btn-dark btn-sm" href="../../filestacker/">File Stacker</a>
+  </nav>
+</div></header>
+
+<main id="main" class="wrap page article">
+  <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="../../">Home</a></li><li><a href="../../guides/">Guides</a></li><li aria-current="page">Clean up Xcode storage</li></ol></nav>
+  <h1>How to clean up Xcode storage</h1>
+  <p class="meta">By Little Mac Apps · Updated <time datetime="2026-10-05">October 5, 2026</time></p>
+
+  <div class="answer">
+    <p><b>Short answer:</b> quit Xcode, then start with <b>DerivedData</b>. It's build output that Xcode recreates, so deleting it costs only a slower next build. Then remove <b>simulator runtimes and platforms</b> you no longer test on in <span class="ui">Xcode → Settings → Components</span>, and delete <b>simulator devices</b> you don't use. Keep <b>archives</b> of any build you've shipped. You need them to read crash reports.</p>
+  </div>
+
+  <p>Xcode stores its data in several places, and each one has a different cost when you delete it. The table gives the overview; the sections below explain each one and how to remove it, with Xcode's own tools first and then File Stacker.</p>
+
+  <div class="table" tabindex="0" role="region" aria-label="Xcode storage locations and what removing them does">
+    <table>
+      <thead><tr><th scope="col">What</th><th scope="col">What it's for</th><th scope="col">What removing it does</th><th scope="col">In File Stacker Cleanup</th></tr></thead>
+      <tbody>
+        <tr><td><b>DerivedData</b></td><td>Build products, intermediates and the code index</td><td>Next build and indexing start from scratch</td><td>Yes: <span class="ui">Xcode DerivedData</span></td></tr>
+        <tr><td><b>Simulator devices</b></td><td>Each simulator's disk, with the apps and data in it</td><td>Apps and data in those simulators are gone</td><td>Yes: <span class="ui">Simulator Devices &amp; Caches</span></td></tr>
+        <tr><td><b>Simulator runtimes and platforms</b></td><td>The OS versions Simulator can run, and platform support</td><td>You can't use that OS version until you download it again</td><td>No; manage in Xcode</td></tr>
+        <tr><td><b>Swift package caches</b></td><td>Cloned package repositories</td><td>Packages are fetched again on the next resolve</td><td>Yes: <span class="ui">Swift Package Caches</span></td></tr>
+        <tr><td><b>CocoaPods caches</b></td><td>Downloaded pod sources</td><td>Pods are downloaded again on the next install</td><td>Yes: part of <span class="ui">Gradle / Maven / CocoaPods Caches</span></td></tr>
+        <tr><td><b>Archives</b></td><td>Builds you archived for distribution, with their debug symbols</td><td>You can't re-export those builds or symbolicate their crash reports</td><td>No; manage in Organizer</td></tr>
+        <tr><td><b>Device support files</b></td><td>Symbols copied from devices you've run apps on</td><td>Xcode copies them again the next time you connect that device</td><td>No; see the treemap</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="meta">File Stacker's Cleanup lists these categories in its Developer group as of the current version. The app explains each category before you remove anything.</p>
+
+  <div class="callout"><p><b>Before you start:</b> quit Xcode and Simulator. Removing build data while Xcode is running can cause errors until you restart it.</p></div>
+
+  <h2 id="derived-data">DerivedData</h2>
+  <p>DerivedData holds what Xcode produces while building: compiled objects, intermediate files, the built app and the index used for code completion and search. It's usually the largest Xcode folder and the safest to clear. By default it lives at <code>~/Library/Developer/Xcode/DerivedData</code>, with one subfolder per project.</p>
+  <ul>
+    <li><b>In Xcode:</b> <span class="ui">Product → Clean Build Folder</span> (<kbd>⇧⌘K</kbd>) clears the build folder for the open project. To see the whole folder, open <span class="ui">Xcode → Settings → Locations</span>; the arrow next to the Derived Data path opens it in Finder.</li>
+    <li><b>In File Stacker <span class="tag">PRO</span>:</b> tick <span class="ui">Xcode DerivedData</span> in Cleanup and click <span class="ui">Move Selected to Trash</span>.</li>
+  </ul>
+  <p><b>Effect:</b> the next build of each project is a full build, and Xcode re-indexes the project. Folders for projects you no longer open stay gone.</p>
+
+  <h2 id="simulators">Simulator devices</h2>
+  <p>Every simulator has its own disk with the apps you've installed and the data they've saved. Simulators for OS versions you no longer have installed keep using space.</p>
+  <ul>
+    <li><b>In Xcode:</b> choose <span class="ui">Window → Devices and Simulators</span>, click <span class="ui">Simulators</span>, then select a simulator and delete it.</li>
+    <li><b>In Terminal:</b> <code>xcrun simctl delete unavailable</code> removes simulators whose runtime is no longer installed. Run <code>xcrun simctl help</code> for the other commands.</li>
+    <li><b>In File Stacker <span class="tag">PRO</span>:</b> tick <span class="ui">Simulator Devices &amp; Caches</span> in Cleanup. This removes every simulator's disk, not just the old ones.</li>
+  </ul>
+  <p><b>Effect:</b> apps, accounts and test data inside those simulators are gone. Xcode recreates default simulators, empty, when you need them.</p>
+
+  <h2 id="runtimes">Simulator runtimes and platforms</h2>
+  <p>Simulator runtimes are full OS images for each iOS, watchOS, tvOS or visionOS version you've downloaded. They can be several gigabytes each.</p>
+  <ol>
+    <li>Choose <span class="ui">Xcode → Settings</span> and click <span class="ui">Components</span>. Xcode shows each installed component and how much storage you'd recover by removing it.</li>
+    <li>Click the Info button next to a runtime or platform you don't need, then click <span class="ui">Delete</span>.</li>
+  </ol>
+  <p><b>Effect:</b> you can't run simulators on that OS version until you download it again from the same screen. Manage runtimes in Xcode; File Stacker's Cleanup doesn't remove them.</p>
+
+  <h2 id="packages">Swift package and CocoaPods caches</h2>
+  <p>Package managers keep downloaded sources so they don't have to fetch them for every build.</p>
+  <ul>
+    <li><b>In File Stacker <span class="tag">PRO</span>:</b> tick <span class="ui">Swift Package Caches</span> or <span class="ui">Gradle / Maven / CocoaPods Caches</span> in Cleanup.</li>
+  </ul>
+  <p><b>Effect:</b> the next package resolve or <code>pod install</code> downloads them again, which needs a network connection and takes time on large projects. Your project's package settings and lock files aren't touched.</p>
+
+  <h2 id="archives">Archives</h2>
+  <p>Each time you choose <span class="ui">Product → Archive</span>, Xcode saves the build together with its debug symbols (dSYMs). Those symbols turn crash reports from users into readable stack traces.</p>
+  <ul>
+    <li><b>In Xcode:</b> open <span class="ui">Window → Organizer</span>, click <span class="ui">Archives</span>, and delete archives you no longer need, such as test builds or versions nobody runs any more.</li>
+  </ul>
+  <p><b>Effect:</b> you can't export or re-upload that build again, and you can't symbolicate its crash reports unless the symbols are stored somewhere else. Keep archives for every version still in users' hands.</p>
+
+  <h2 id="device-support">Device support files</h2>
+  <p>When you run an app on a connected iPhone, iPad or other device, Xcode copies that OS version's debug symbols to your Mac. Over time this leaves a folder for every OS version you've used, under <code>~/Library/Developer/Xcode</code>.</p>
+  <p><b>Effect of removing:</b> the next time you connect a device on that OS version, Xcode copies the symbols again before you can debug, which can take a while. Folders for OS versions you no longer use are safe to remove.</p>
+
+  <h2 id="free-workflow">Measure first with the free treemap <span class="tag free">FREE</span></h2>
+  <p>If you'd rather clean up by hand, File Stacker's free treemap shows where Xcode's space actually is before you delete anything.</p>
+  <ol>
+    <li>Scan your Home folder. Granting it includes your Library folder.</li>
+    <li>Drill into <span class="ui">Library → Developer</span>. The biggest blocks are usually <span class="ui">Xcode</span> and <span class="ui">CoreSimulator</span>.</li>
+    <li>Select a folder to see its size on disk. Right-click and choose <span class="ui">Show in Finder</span> to manage it yourself.</li>
+  </ol>
+  <div class="callout"><p><b>Don't delete the whole Developer folder.</b> <code>~/Library/Developer/Xcode/UserData</code> holds your own settings, such as key bindings, code snippets and themes. Remove specific folders instead.</p></div>
+
+  <h2 id="get-space-back">Getting the space back</h2>
+  <p>File Stacker moves what you remove to the Trash and never empties it, so you can undo with <span class="ui">Recent Removals → Put Back</span>. The space becomes available only after you empty the Trash in Finder. Some of it may return over time as you build again, because Xcode recreates DerivedData and simulators as you work.</p>
+
+  <h2 id="sources">Sources</h2>
+  <ul class="sources">
+    <li>Apple Developer: <a href="https://developer.apple.com/documentation/xcode/downloading-and-installing-additional-xcode-components">Downloading and installing additional Xcode components</a> (Settings → Components)</li>
+    <li>Apple Support: <a href="https://support.apple.com/en-us/102624">Free up storage space on Mac</a> (emptying the Trash)</li>
+  </ul>
+
+  <h2 id="related">Related guides</h2>
+  <div class="related">
+    <a href="../find-large-files-mac/">Find large files<span>Storage settings, Finder search and the treemap.</span></a>
+    <a href="../find-duplicate-files-mac/">Find duplicate files<span>Identical vs. similar files, and which copy to keep.</span></a>
+    <a href="../../filestacker/#cleanup">Cleanup quick steps<span>The short version in the File Stacker guide.</span></a>
+  </div>
+
+</main>
+
+<footer class="site-footer"><div class="wrap">
+  <span>© 2026 Little Mac Apps</span>
+  <nav aria-label="Footer">
+    <a href="../../">Little Mac Apps</a>
+    <a href="../../filestacker/">File Stacker</a>
+    <a href="../../guides/">Guides</a>
+    <a href="../../about/">About</a>
+    <a href="../../contact/">Contact</a>
+    <a href="../../filestacker/privacy.html">Privacy</a>
+  </nav>
+</div></footer>
+</body>
+</html>
