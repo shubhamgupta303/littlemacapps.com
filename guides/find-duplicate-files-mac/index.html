@@ -14,7 +14,7 @@
 <meta property="og:image" content="https://littlemacapps.com/assets/filestacker-512.png">
 <link rel="icon" href="../../assets/logo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../../assets/filestacker-256.png">
-<link rel="stylesheet" href="../../assets/style.css?v=5">
+<link rel="stylesheet" href="../../assets/style.css?v=6">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -87,7 +87,7 @@
   <p class="meta">By Little Mac Apps · Updated <time datetime="2026-10-05">October 5, 2026</time></p>
 
   <div class="answer">
-    <p><b>Short answer:</b> macOS has no general duplicate-file finder. For photos and videos, open Photos and click <span class="ui">Duplicates</span> under <span class="ui">Utilities</span> in the sidebar (macOS Ventura or later). For everything else, use a tool that compares file contents. File Stacker's Duplicates tool (Pro) groups identical files, lets you choose which copy to keep, and moves the others to the Trash.</p>
+    <p><b>Short answer:</b> macOS has no general duplicate-file finder. For photos and videos, open Photos and click <span class="ui">Duplicates</span> under <span class="ui">Utilities</span> in the sidebar (macOS Ventura or later). For everything else, use a tool that compares file contents. File Stacker's Duplicates tool groups identical files, lets you choose which copy to keep, and moves the others to the Trash.</p>
   </div>
 
   <h2 id="identical-vs-similar">Identical files vs. similar files</h2>
@@ -115,17 +115,15 @@
   <h3 id="finder">Other files: a manual check in Finder</h3>
   <p>Finder can't compare contents, but it can show likely duplicates. Search for a name, then switch to list view and sort by <span class="ui">Size</span>. Files with the same name and exactly the same size are worth checking. Open both before deleting, because the same size doesn't prove the same contents.</p>
 
-  <h2 id="file-stacker">Find identical files with File Stacker <span class="tag">PRO</span></h2>
-  <p>Scanning and the treemap are free. The Duplicates tool needs the one-time <a href="../../filestacker/#pricing">Pro unlock</a>.</p>
+  <h2 id="file-stacker">Find identical files with File Stacker</h2>
   <ol>
     <li>Scan the folders you want to check. Your Home folder is a good start; add an external disk with <span class="ui">Grant Access to a Folder…</span>.</li>
     <li>Open <span class="ui">Duplicates</span> in the sidebar.</li>
-    <li>Choose <span class="ui">Ignore files under</span> 1 MB, 10 MB or 100 MB. Larger limits are faster and show where the space is.</li>
-    <li>Click <span class="ui">Find Duplicates</span>. Each set lists copies with identical contents, with the size of one copy and how many there are.</li>
-    <li>Choose which copy to keep with the <span class="ui">Keep</span> menu (<span class="ui">Newest copy</span>, <span class="ui">Oldest copy</span> or a folder), or click <span class="ui">Keep this one</span> on a specific copy.</li>
-    <li>Click the set's button to keep that copy and move the others to the Trash. File Stacker checks every copy again right before anything moves.</li>
+    <li>Set <span class="ui">Ignore files under</span> to skip small files. A larger limit is faster and shows where the space is.</li>
+    <li>Run the search. Each set lists copies with identical contents, with the size of one copy and how many there are.</li>
+    <li>Choose the copy to keep, using the advice below, and move the others to the Trash.</li>
   </ol>
-  <p>To check a file before choosing, select it to see its full path and dates, or press <kbd>Space</kbd> for Quick Look (macOS 14 or later).</p>
+  <p>To check a file before choosing, select it to see its full path and dates, or press <kbd>Space</kbd> for Quick Look.</p>
 
   <h2 id="which-copy">How to choose which copy to keep</h2>
   <ul>
@@ -139,15 +137,14 @@
   <h2 id="space">Why removing a duplicate may free less space than shown</h2>
   <p>File Stacker treats duplicate savings as an upper bound. You may get back less than the size shown because:</p>
   <ul>
-    <li><b>APFS clones share storage.</b> When you copy a file on the same APFS volume, macOS can create a clone that shares the original's data blocks. Deleting a clone frees almost nothing. File Stacker marks these sets as <span class="ui">APFS clones</span>.</li>
+    <li><b>APFS clones share storage.</b> When you copy a file on the same APFS volume, macOS can create a clone that shares the original's data blocks. Deleting a clone frees almost nothing.</li>
     <li><b>Hard links point to the same data.</b> Two paths can refer to one file on disk, so removing one path frees nothing.</li>
     <li><b>Compression and sparse files</b> mean a file can take up less space on disk than its listed size.</li>
     <li><b>The Trash still holds the file.</b> The space isn't available until you empty the Trash. File Stacker never empties it for you.</li>
   </ul>
-  <p>Files stored only in iCloud are skipped rather than downloaded to compare.</p>
 
   <h2 id="undo">Undoing a mistake</h2>
-  <p>Everything File Stacker removes goes to the Trash. Open <span class="ui">Recent Removals</span> and click <span class="ui">Put Back</span> to return an item to its original folder, as long as it's still in the Trash. In Finder, you can also select an item in the Trash and choose <span class="ui">File → Put Back</span>. You can also mark a folder <span class="ui">Protect from removal</span> so no tool ever suggests files inside it.</p>
+  <p>Everything File Stacker removes goes to the Trash. Open <span class="ui">Recent Removals</span> and click <span class="ui">Put Back</span> to return an item to its original folder, as long as it's still in the Trash. In Finder, you can also select an item in the Trash and choose <span class="ui">File → Put Back</span>. You can also protect a folder so File Stacker won't remove anything inside it.</p>
 
   <h2 id="sources">Sources</h2>
   <ul class="sources">

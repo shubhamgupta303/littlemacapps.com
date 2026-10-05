@@ -14,7 +14,7 @@
 <meta property="og:image" content="https://littlemacapps.com/assets/filestacker-512.png">
 <link rel="icon" href="../../assets/logo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../../assets/filestacker-256.png">
-<link rel="stylesheet" href="../../assets/style.css?v=5">
+<link rel="stylesheet" href="../../assets/style.css?v=6">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -115,25 +115,25 @@
   <p>Select a folder and press <kbd>⌘I</kbd> to see its total size. This works for checking one folder, but it's slow for finding which folder is the problem.</p>
 
   <h2 id="file-stacker">Find large files with File Stacker</h2>
-  <p>File Stacker is a disk space analyzer for Mac. It scans the folders you choose and shows them as a treemap: every rectangle is a file or folder, sized by how much disk space it uses. The tag next to each step says whether it's in the free version or needs the one-time <a href="../../filestacker/#pricing">Pro unlock</a>.</p>
+  <p>File Stacker is a disk space analyzer for Mac. It scans the folders you choose and shows them as a treemap: every rectangle is a file or folder, sized by how much disk space it uses.</p>
 
-  <h3 id="scan">Scan and read the map <span class="tag free">FREE</span></h3>
+  <h3 id="scan">Scan and read the map</h3>
   <ol>
     <li>Open File Stacker and click <span class="ui">Scan Home Folder…</span>. In the folder picker, keep your Home folder selected and click <span class="ui">Grant Access</span>. The app is sandboxed, so it can read only the folders you grant.</li>
     <li>Look for the largest rectangles first. Colors show the kind of file; click a kind in the legend to highlight it.</li>
     <li>Click a folder to drill in. Press <kbd>⌘↑</kbd> to go back up a level.</li>
-    <li>Click any item to see its size on disk, dates and largest contents in the inspector. Press <kbd>Space</kbd> for Quick Look (macOS 14 or later).</li>
+    <li>Click any item to see its size on disk, dates and largest contents in the inspector. Press <kbd>Space</kbd> for Quick Look.</li>
   </ol>
 
-  <h3 id="filter">Filter by size and age <span class="tag free">FREE</span></h3>
+  <h3 id="filter">Filter by size and age</h3>
   <ol>
     <li>Click <span class="ui">Filter</span> and set <span class="ui">Larger than</span> to hide everything below a size.</li>
     <li>Add <span class="ui">Not opened in</span> to narrow the list to files you haven't touched for months.</li>
     <li>Type an extension such as <code>.dmg</code>, <code>.zip</code> or <code>.mov</code> in the search field to find every file of that kind.</li>
   </ol>
-  <p>In the free version, right-click an item and choose <span class="ui">Show in Finder</span> to delete it there.</p>
+  <p>To handle an item yourself, right-click it and choose <span class="ui">Show in Finder</span>.</p>
 
-  <h3 id="large-old-tool">Use Large &amp; Old Files <span class="tag">PRO</span></h3>
+  <h3 id="large-old-tool">Use Large &amp; Old Files</h3>
   <ol>
     <li>After a scan, open <span class="ui">Large &amp; Old Files</span> in the sidebar.</li>
     <li>Set <span class="ui">Larger than</span> and <span class="ui">Not opened in</span>. The list updates as you change them, biggest first.</li>
@@ -155,7 +155,7 @@
     <li><b>Don't remove files from inside app libraries.</b> Your Photos library, Music library and an app's own folders are managed by those apps. Clean them up from inside the app.</li>
     <li><b>Empty the Trash to get the space back.</b> When you move a file to the Trash, its space isn't available until you empty the Trash. File Stacker never empties the Trash for you.</li>
     <li><b>Sizes can differ between apps.</b> File Stacker shows the space a file actually occupies on disk. Finder's size can be different. On APFS a copied file can be a clone that shares storage with the original, so deleting one copy may free little space.</li>
-    <li><b>Keep files you might need in iCloud instead.</b> For a file in iCloud Drive, File Stacker's <span class="ui">Remove Download (Keep in iCloud)</span> deletes the local copy and keeps the file in iCloud.</li>
+    <li><b>Keep files you might need in iCloud instead.</b> For a file in iCloud Drive, File Stacker's <span class="ui">Remove Download</span> asks macOS to remove only the local copy and keep the file in iCloud.</li>
   </ul>
 
   <h2 id="limits">What File Stacker can't see</h2>

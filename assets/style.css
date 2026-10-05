@@ -261,3 +261,4 @@ details p { color: var(--muted); margin: 10px 0 0; }
 .article td code { word-break: normal; overflow-wrap: anywhere; }
 .illus-caption { text-align: center; margin-top: 10px; }
 .article .table table { min-width: 560px; }
+.price small { display: inline-block; white-space: nowrap; }

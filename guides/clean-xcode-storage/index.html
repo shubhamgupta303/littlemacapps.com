@@ -14,7 +14,7 @@
 <meta property="og:image" content="https://littlemacapps.com/assets/filestacker-512.png">
 <link rel="icon" href="../../assets/logo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../../assets/filestacker-256.png">
-<link rel="stylesheet" href="../../assets/style.css?v=5">
+<link rel="stylesheet" href="../../assets/style.css?v=6">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -105,7 +105,7 @@
       </tbody>
     </table>
   </div>
-  <p class="meta">The File Stacker descriptions in this table are the ones the app shows in Cleanup. Cleanup is a Pro feature.</p>
+  <p class="meta">The File Stacker descriptions in this table are the ones the app shows in Cleanup.</p>
 
   <div class="callout"><p><b>Before you start:</b> quit Xcode and Simulator, so nothing is writing to these folders while you remove them.</p></div>
 
@@ -122,7 +122,7 @@
   <h2 id="derived-data">DerivedData</h2>
   <p>File Stacker describes Xcode DerivedData as “build intermediates and indexes”. It's the output Xcode produces while it builds and indexes your projects, and Xcode's build system manages and cleans it.</p>
   <ul>
-    <li><b>In File Stacker <span class="tag">PRO</span>:</b> open <span class="ui">Cleanup</span>, tick <span class="ui">Xcode DerivedData</span> and click <span class="ui">Move Selected to Trash</span>.</li>
+    <li><b>In File Stacker:</b> open <span class="ui">Cleanup</span>, tick <span class="ui">Xcode DerivedData</span> and click <span class="ui">Move Selected to Trash</span>.</li>
     <li><b>In Xcode:</b> a clean build removes a project's build output, so the next build starts from scratch.</li>
   </ul>
   <p><b>Effect:</b> Xcode recreates the data on the next build, so that build and indexing take longer than usual. Nothing in your source code or project settings changes.</p>
@@ -130,7 +130,7 @@
   <h2 id="simulators">Simulator devices</h2>
   <p>Each simulator has its own disk holding the apps you've installed in it and the data they've saved.</p>
   <ul>
-    <li><b>In File Stacker <span class="tag">PRO</span>:</b> tick <span class="ui">Simulator Devices &amp; Caches</span> in Cleanup. The app describes this category as every simulator's disk: you lose apps and data installed in simulators, and Xcode recreates devices, empty, when they're needed. Expand the row to see what it lists before you remove anything.</li>
+    <li><b>In File Stacker:</b> tick <span class="ui">Simulator Devices &amp; Caches</span> in Cleanup. The app describes this category as every simulator's disk: you lose apps and data installed in simulators, and Xcode recreates devices, empty, when they're needed. Expand the row to see what it lists before you remove anything.</li>
     <li><b>In Xcode:</b> in current Xcode, simulators appear in Device Hub (<span class="ui">Xcode → Open Developer Tool → Device Hub</span>). Control-click a simulator and choose <span class="ui">Remove</span> to take it off the list. Apple's documentation doesn't say whether this also deletes the simulator's data. Earlier Xcode releases manage simulators in a Devices and Simulators window instead.</li>
     <li><b>In Terminal:</b> Apple points to <code>xcrun simctl help</code> for simulator commands.</li>
   </ul>
@@ -139,7 +139,7 @@
   <h2 id="packages">Swift package, CocoaPods, Gradle and Maven caches</h2>
   <p>Package managers keep downloaded dependencies so they don't have to fetch them for every build.</p>
   <ul>
-    <li><b>In File Stacker <span class="tag">PRO</span>:</b> tick <span class="ui">Swift Package Caches</span> (“cloned package repositories, re-fetched on the next resolve”) or <span class="ui">Gradle / Maven / CocoaPods Caches</span> (“dependency caches, re-downloaded on the next build”).</li>
+    <li><b>In File Stacker:</b> tick <span class="ui">Swift Package Caches</span> (“cloned package repositories, re-fetched on the next resolve”) or <span class="ui">Gradle / Maven / CocoaPods Caches</span> (“dependency caches, re-downloaded on the next build”).</li>
   </ul>
   <p><b>Effect:</b> the next package resolve or build downloads the dependencies again, so it needs a network connection and takes longer. Your project files aren't changed. The Gradle / Maven / CocoaPods category is a single row, so check its contents if you use those tools for other projects.</p>
 
@@ -147,8 +147,8 @@
   <p>When you archive an app for distribution, Xcode stores its binaries and debug symbols (dSYM files) inside the archive. A crash report can only be matched to the dSYM from the exact same build.</p>
   <p><b>Keep the archive of every build you've distributed.</b> Apple's guidance is that without it you might not be able to diagnose issues from crash reports. Archives of test builds you never shipped are the ones to consider removing. File Stacker's Cleanup doesn't list archives.</p>
 
-  <h2 id="free-workflow">Measure first with the free treemap <span class="tag free">FREE</span></h2>
-  <p>File Stacker's free treemap shows where Xcode's space is before you delete anything.</p>
+  <h2 id="free-workflow">Measure first with the treemap</h2>
+  <p>File Stacker's treemap shows where Xcode's space is before you delete anything.</p>
   <ol>
     <li>Scan your Home folder. Granting it includes your Library folder.</li>
     <li>Drill into <span class="ui">Library → Developer</span> and select the largest blocks to see their size on disk.</li>
